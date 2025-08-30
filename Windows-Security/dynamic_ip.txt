@@ -1,0 +1,37 @@
+Saatte IP yenileme
+
+schtasks /create /sc hourly /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew"
+
+Bilgisayar açıldığında IP yenileme
+
+schtasks /create /sc ONSTART /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew" /f
+
+Her x dakikada bir IP yenileme(x'i istediginiz sayi ile degisin)
+
+schtasks /create /sc MINUTE /mo x /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew" /f
+
+Her gün saat xx:yy’te IP yenileme(03:00; 05:00 vb.)
+
+schtasks /create /sc DAILY /st xx:yy /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew" /f
+
+
+IN ENGLISH:
+
+Hourly IP Renewal
+
+schtasks /create /sc hourly /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew"
+
+
+IP Renewal on Computer Startup
+
+schtasks /create /sc ONSTART /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew" /f
+
+
+IP Renewal Every X Minutes (replace X with your desired number)
+
+schtasks /create /sc MINUTE /mo x /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew" /f
+
+
+IP Renewal Every Day at Specific Time (e.g., 03:00; 05:00, etc.)
+
+schtasks /create /sc DAILY /st xx:yy /tn "IP_Renew" /tr "ipconfig /release & ipconfig /renew" /f

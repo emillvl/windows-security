@@ -1,0 +1,6 @@
+for %p in (21 135 139 445 3389) do netsh advfirewall firewall add rule name="Kapat_%p" dir=in action=block protocol=TCP localport=%p
+
+
+If your PC's language is English, then copy and paste it instead/ Eger ingilizce arayuz kullaniyorsaniz, bunu kopyalayip yapistirin:
+
+for %p in (21 135 139 445 3389) do netsh advfirewall firewall add rule name="Block_%p" dir=in action=block protocol=TCP localport=%p
